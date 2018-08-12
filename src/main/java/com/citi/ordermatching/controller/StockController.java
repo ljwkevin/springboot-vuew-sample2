@@ -20,7 +20,9 @@ public class StockController {
     @Autowired
     private StockService stockService;
 
-
+    /*
+     Some comment to test!
+     */
     @RequestMapping("/findAllStocks")
     @ResponseBody
     public List<Stock> findAllStocks(){
