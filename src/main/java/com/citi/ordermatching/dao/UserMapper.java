@@ -20,4 +20,8 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
     List<User> finAllUsers();
+
+    User userLogin(User user);
+
+    User isExist(String username);
 }

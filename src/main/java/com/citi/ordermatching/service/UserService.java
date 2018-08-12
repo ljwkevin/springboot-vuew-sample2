@@ -9,4 +9,7 @@ import java.util.List;
  */
 public interface UserService {
     List<User> findAllUsers();
+    User userLogin(User user);
+    User isExist(String username);
+    int registerUser(User user);
 }

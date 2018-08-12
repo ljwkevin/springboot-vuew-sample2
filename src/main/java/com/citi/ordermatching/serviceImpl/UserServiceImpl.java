@@ -23,4 +23,21 @@ public class UserServiceImpl implements UserService {
 
         return userMapper.finAllUsers();
     }
+
+    @Override
+    public User userLogin(User user) {
+        return userMapper.userLogin(user);
+    }
+
+    @Override
+    public User isExist(String username) {
+        return userMapper.isExist(username);
+    }
+
+    @Override
+    public int registerUser(User user) {
+        return userMapper.insertSelective(user);
+    }
+
+
 }
