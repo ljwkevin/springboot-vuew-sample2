@@ -50,7 +50,7 @@ public class OrderbookController {
     }
 
 
-    public void match(@RequestParam("symbol")String symbol){
+    public void match(String symbol){
 
         boolean flag=checkMatch(symbol);
         if(flag){
