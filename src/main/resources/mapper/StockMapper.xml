@@ -25,6 +25,19 @@
   </select>
 
 
+  <select id="findStockByParam" resultMap="BaseResultMap"  parameterType="java.lang.String">
+    select
+    <include refid="Base_Column_List" />
+    from stock where name=#{name,jdbcType=VARCHAR} OR symbol=#{symbol,jdbcType=VARCHAR}
+  </select>
+
+
+
+
+
+
+
+
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from stock

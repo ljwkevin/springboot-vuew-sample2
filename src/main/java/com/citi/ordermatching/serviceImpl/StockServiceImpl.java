@@ -22,4 +22,11 @@ public class StockServiceImpl implements StockService {
     public List<Stock> findAllStocks() {
         return stockMapper.findAllStocks();
     }
+
+    @Override
+    public Stock findStockByParam(String param) {
+        return stockMapper.findStockByParam(param);
+    }
+
+
 }

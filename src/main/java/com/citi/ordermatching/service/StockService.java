@@ -10,4 +10,5 @@ import java.util.List;
 public interface StockService {
 
     public List<Stock> findAllStocks();
+    public Stock findStockByParam(String param);
 }

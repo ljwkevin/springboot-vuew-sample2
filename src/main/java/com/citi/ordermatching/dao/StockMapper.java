@@ -20,4 +20,7 @@ public interface StockMapper {
     int updateByPrimaryKey(Stock record);
 
     List<Stock> findAllStocks();
+
+    Stock findStockByParam(String param);
+
 }

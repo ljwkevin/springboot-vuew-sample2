@@ -11,6 +11,7 @@
     <result column="status" property="status" jdbcType="VARCHAR" />
     <result column="operatetime" property="operatetime" jdbcType="TIMESTAMP" />
   </resultMap>
+
   <sql id="Base_Column_List" >
     id, symbol, traderid, type, size, price, status, operatetime
   </sql>
@@ -20,6 +21,24 @@
     from orderbook
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+
+
+  <select id="findAskBySymbol" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from orderbook
+    where symbol=#{symbol,jdbcType=VARCHAR} and type="ask" order by price ASC
+  </select>
+
+  <select id="findBidBySymbol" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from orderbook
+    where symbol=#{symbol,jdbcType=VARCHAR} and type="bid" order by price DESC
+  </select>
+
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from orderbook
     where id = #{id,jdbcType=INTEGER}

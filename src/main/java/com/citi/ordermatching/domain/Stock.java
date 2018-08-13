@@ -7,6 +7,11 @@ public class Stock {
 
     private String symbol;
 
+
+    private Double bestBid;
+
+    private Double bestAsk;
+
     private Double currentprice;
 
     public Integer getId() {
@@ -39,5 +44,21 @@ public class Stock {
 
     public void setCurrentprice(Double currentprice) {
         this.currentprice = currentprice;
+    }
+
+    public Double getBestBid() {
+        return bestBid;
+    }
+
+    public void setBestBid(Double bestBid) {
+        this.bestBid = bestBid;
+    }
+
+    public Double getBestAsk() {
+        return bestAsk;
+    }
+
+    public void setBestAsk(Double bestAsk) {
+        this.bestAsk = bestAsk;
     }
 }

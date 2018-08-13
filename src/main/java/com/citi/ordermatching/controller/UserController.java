@@ -21,13 +21,13 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/getUsers/")
+    @RequestMapping("/getUsers")
     @ResponseBody
     public List<User> findAllUsers(){
         return userService.findAllUsers();
     }
 
-    @RequestMapping("/login/")
+    @RequestMapping("/login")
     @ResponseBody
     public User userLogin(@RequestParam("username")String username,@RequestParam("password")String password){
 
