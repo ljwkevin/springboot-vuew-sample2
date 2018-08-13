@@ -24,4 +24,6 @@ public interface UserMapper {
     User userLogin(User user);
 
     User isExist(String username);
+
+    User selectByToken(String token);
 }

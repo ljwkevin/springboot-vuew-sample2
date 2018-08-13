@@ -39,8 +39,12 @@ public class UserController {
         user.setPassword(password);
         User result=userService.userLogin(user);
         if(result!=null){
+
             Map map=new HashMap();
             String token = TokenProccessor.getInstance().makeToken();
+            result.setToken(token);
+            userService.updateUser(result);
+
             map.put("token",token);
             map.put("result",result);
             String jsonResult= JSON.toJSONString(map);
@@ -50,6 +54,21 @@ public class UserController {
         }
 
     }
+
+        @RequestMapping("info")
+        @ResponseBody
+        public String info(@RequestParam("token")String token){
+
+            User user=userService.getUserByToken(token);
+
+            Map map=new HashMap();
+            map.put("avatar","https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif");
+            map.put("user",user);
+            map.put("role","admin");
+
+            String jsonResult=JSON.toJSONString(map);
+            return jsonResult;
+        }
 
     @RequestMapping("/register")
     @ResponseBody

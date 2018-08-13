@@ -12,4 +12,6 @@ public interface UserService {
     User userLogin(User user);
     User isExist(String username);
     int registerUser(User user);
+    public void updateUser(User user);
+    public User getUserByToken(String token);
 }

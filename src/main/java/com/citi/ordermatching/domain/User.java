@@ -9,6 +9,8 @@ public class User {
 
     private Double money;
 
+    private String token;
+
     public Integer getId() {
         return id;
     }
@@ -39,5 +41,13 @@ public class User {
 
     public void setMoney(Double money) {
         this.money = money;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

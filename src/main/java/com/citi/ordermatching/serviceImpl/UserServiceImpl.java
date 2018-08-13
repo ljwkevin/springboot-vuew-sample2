@@ -39,5 +39,14 @@ public class UserServiceImpl implements UserService {
         return userMapper.insertSelective(user);
     }
 
+    @Override
+    public void updateUser(User user) {
+        userMapper.updateByPrimaryKeySelective(user);
+    }
+
+    @Override
+    public User getUserByToken(String token) {
+        return userMapper.selectByToken(token);
+    }
 
 }
